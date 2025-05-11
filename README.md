@@ -245,6 +245,6 @@ This backend provides a RESTful API for a course selling platform. It supports u
 
 ## Contact
 
-For questions or support, contact [shathwikrd@gmail.com](mailto:shathwikrd@gmail.comm).
+For questions or support, contact [shathwikrd@gmail.com](mailto:shathwikrd@gmail.com).
 
 ---
