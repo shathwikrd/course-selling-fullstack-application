@@ -57,7 +57,7 @@ courseRouter.post("/purchase", userAuth, async (req, res) => {
 courseRouter.get("/preview", async (req, res) => {
   try {
     const course = await CourseModel.find();
-    res.json(course);
+    res.json({course});
   } catch (err) {
     res.status(500).json({
       message: "Internal server error",
