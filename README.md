@@ -1,5 +1,9 @@
 # Course Selling Fullstack Application - API Documentation
 
+## About the Application
+
+The Course Selling Fullstack Application is a platform that allows administrators to create and manage online courses, and users to browse, purchase, and access these courses. The backend provides secure authentication for both admins and users, supports course management, and tracks user purchases. The application is built using Node.js, Express, MongoDB, and JWT for authentication, and is designed to be used as the backend for a modern web-based course marketplace.
+
 ## Overview
 
 This backend provides a RESTful API for a course selling platform. It supports user and admin authentication, course management, and course purchasing. The backend is built with Node.js, Express, MongoDB, and uses JWT for authentication.
@@ -8,7 +12,6 @@ This backend provides a RESTful API for a course selling platform. It supports u
 
 ## Table of Contents
 
-- [Getting Started](#getting-started)
 - [Authentication](#authentication)
 - [API Endpoints](#api-endpoints)
   - [Admin Routes](#admin-routes)
@@ -17,41 +20,6 @@ This backend provides a RESTful API for a course selling platform. It supports u
 - [Error Handling](#error-handling)
 - [Environment Variables](#environment-variables)
 - [Contact](#contact)
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v16+)
-- npm
-- MongoDB (local or Atlas)
-
-### Installation
-
-```bash
-git clone https://github.com/shathwikrd/course-selling-fullstack-application.git
-cd course-selling-fullstack-application/server
-npm install
-```
-
-### Environment Setup
-
-Copy `.env.example` to `.env` and fill in the values:
-
-```
-PORT=3000
-MONGODB_URI=mongodb://localhost:27017/course-selling
-JWT_SECRET_ADMIN=your_admin_jwt_secret
-JWT_SECRET_USER=your_user_jwt_secret
-```
-
-### Running the Server
-
-```bash
-npm run serve
-```
 
 ---
 
