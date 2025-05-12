@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react";
 import { getCourses, purchaseCourse } from "../services";
 import { useAuth } from "../context/AuthContext";
+import { SyncLoader } from "react-spinners";
 
 function Home() {
   const [courses, setCourses] = useState([]);
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const { isSignedIn, role } = useAuth();
 
   useEffect(() => {
-    getCourses().then(setCourses);
+    async function fetchCourses() {
+      setIsLoading(true);
+      const data = await getCourses();
+      setCourses(data);
+      setIsLoading(false);
+    }
+
+    fetchCourses();
   }, []);
 
   async function handleBuy(courseId) {
@@ -19,6 +28,13 @@ function Home() {
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Courses</h1>
+      {isLoading ? (
+        <SyncLoader
+          style={{ position: "fixed", top: "50%", left: "50%", zIndex: "10" }}
+        />
+      ) : (
+        ""
+      )}
       {message && <div className="mb-4 text-green-600">{message}</div>}
       <div className="flex flex-wrap gap-10">
         {courses.map((course) => (
